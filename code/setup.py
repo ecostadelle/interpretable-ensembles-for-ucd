@@ -7,11 +7,11 @@ from setuptools import setup, Extension
 import numpy
 from Cython.Build import cythonize
 
-extensions = [Extension('*', ['*.pyx'], libraries=['gsl', 'gslcblas'],
+extensions = [Extension('*', ['*.pyx','code/*.pyx','ie4ucd/*.pyx'], libraries=['gsl', 'gslcblas'],
                         library_dirs=['../external_lib/gsl_x64-windows/lib'])]
 
 setup(
     ext_modules=cythonize(extensions, language_level='2'),
-    include_dirs=[numpy.get_include(), '../external_lib/gsl_x64-windows/include'],
+    include_dirs=[numpy.get_include(), 'code', '../external_lib/gsl_x64-windows/include'],
     zip_safe=False,
 )

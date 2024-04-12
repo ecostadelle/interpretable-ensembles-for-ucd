@@ -1,0 +1,27 @@
+[build-system]
+requires = [
+    "setuptools",
+    "wheel", 
+    "Cython"
+]
+
+[project]
+name = "ie4ucd"
+version = "0.1.0"
+requires-python = "~=3.9"
+
+dependencies = [
+    "numpy~=1.19.5",
+    "pandas~=1.2.1",
+    "scikit-learn~=0.24.1",
+    "setuptools~=51.3.3",
+    "Cython~=0.29.21",
+    "joblib~=1.0.0",
+    "scipy~=1.6.0"
+]
+
+[tool.setuptools.package-dir]
+ie4ucd = "code"
+
+[tool.setuptools.package-data]
+ie4ucd = ["*.py*"]
